@@ -13,7 +13,7 @@ The design utilizes a sophisticated color palette based on black and gold (`--go
 ### Mobile Demo
 | Home & Hero | Services & Prices | Location & Footer |
 | :---: | :---: | :---: |
-| ![Home Mobile](/images/screenshots/home.png) | ![Prices Mobile](/images/screenshots/price.png) | ![Footer Mobile](/images/screenshots/footer.png) |
+| ![Home Mobile](images/screenshots/home.png) | ![Prices Mobile](images/screenshots/price.png) | ![Footer Mobile](images/screenshots/footer.png) |
 
 ---
 
