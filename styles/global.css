@@ -1,0 +1,64 @@
+/* RESET E BASICS */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
+  outline: none;
+}
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+:root {
+  --gold: #c5a059;
+  --dark: #0d0d0d;
+  --dark-grey: #1a1a1a;
+  --white: #f5f5f5;
+  --transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+body {
+  background-color: var(--dark);
+  color: var(--white);
+  font-family: "Open Sans", sans-serif;
+}
+
+h1,
+h2,
+h3,
+.logo {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 900;
+}
+
+/* Largura da barra de rolagem */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Fundo da barra (Track) */
+::-webkit-scrollbar-track {
+  background: var(--dark);
+}
+
+/* O "pegador" da barra (Thumb) */
+::-webkit-scrollbar-thumb {
+  background: #222;
+  border-radius: 10px;
+  border: 2px solid var(--dark);
+  transition: var(--transition);
+}
+
+/* Efeito ao passar o mouse no scroll */
+::-webkit-scrollbar-thumb:hover {
+  background: var(--gold);
+}
+
+/* Suporte para Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #222 var(--dark);
+}
