@@ -62,23 +62,30 @@ style.innerHTML = `
 `;
 document.head.appendChild(style);
 
-// 5. MENU MOBILE TOGGLE
+// 5. MENU MOBILE TOGGLE (CORRIGIDO PARA EVITAR BUG DE SCROLL X)
 const mobileMenuIcon = document.querySelector('.mobile-menu-icon');
 const navMenu = document.querySelector('.nav-menu');
 const navLinks = document.querySelectorAll('.nav-menu li a');
 
-mobileMenuIcon.addEventListener('click', () => {
-    navMenu.classList.toggle('active');
+function toggleMenu() {
+    const isActive = navMenu.classList.toggle('active');
     mobileMenuIcon.classList.toggle('active');
-    // Trava o scroll do corpo quando o menu está aberto
-    document.body.style.overflow = navMenu.classList.contains('active') ? 'hidden' : 'initial';
-});
+    
+    // Trava o scroll do corpo apenas quando o menu está aberto
+    if (isActive) {
+        document.body.style.overflow = 'hidden';
+    } else {
+        document.body.style.overflow = ''; 
+    }
+}
 
-// Fecha o menu ao clicar em um link
+mobileMenuIcon.addEventListener('click', toggleMenu);
+
+// Fecha o menu ao clicar em um link e limpa qualquer trava de scroll
 navLinks.forEach(link => {
     link.addEventListener('click', () => {
         navMenu.classList.remove('active');
         mobileMenuIcon.classList.remove('active');
-        document.body.style.overflow = 'initial';
+        document.body.style.overflow = ''; 
     });
 });
